@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Advanced Artillery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0D1B2A">
+    <meta name="description" content="Sentinel Advanced Artillery - Forging the Future of Defense">
+    <link rel="apple-touch-icon" href="favicon.jpg">
+</head>
+<body>
+
+    <!-- Firebase Comment: User authentication state would be checked here.
+         If logged in, nav might change (e.g., "Profile" instead of "Bookings", or direct forum access).
+    -->
+    <header>
+        <nav>
+            <a href="#home" class="nav-link nav-logo-placeholder">Home</a>
+            <ul class="nav-middle">
+                <li>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Latest Wars & Conflicts</a></li>
+                        <li><a href="#">Our Guidance Systems</a></li>
+                        <li><a href="#">Artillery Insights</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Victories Overseas</a></li>
+                        <li><a href="#">Technological Milestones</a></li>
+                        <li><a href="#">Lost Hardware (Classified Archive)</a></li>
+                        <li><a href="#">Most Wanted Threats</a></li>
+                        <li><a href="#">Our Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Guidance Systems</a></li>
+                        <li><a href="#">Heavy Artillery Units</a></li>
+                        <li><a href="#">Tactical Military Gear</a></li>
+                        <li><a href="#">Company Merch</a></li>
+                    </ul>
+                </li>
+                <li><a href="forum.html" class="nav-link">Vets Forum</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="bookings.html" class="nav-link nav-button">Bookings</a>
+                <ul class="dropdown booking-dropdown">
+                    <li><a href="#">Bodyguard Services</a></li>
+                    <li><a href="#">Special Drone Operations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>SENTINEL<br>ADVANCED ARTILLERY</h1>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <!-- Section 1: Latest Blogs -->
+            <section id="latest-blogs" class="content-section animate-on-scroll">
+                <h2>FROM THE FRONT LINES & LABS</h2>
+                <div class="blog-grid">
+                    <!-- Firebase Comment: Blog posts would be fetched from Firestore
+                         database and dynamically rendered here. Example structure:
+                         Firebase.firestore().collection('blogs').orderBy('date', 'desc').limit(3).get().then(snapshot => {
+                             snapshot.forEach(doc => {
+                                 const blog = doc.data();
+                                 // create HTML elements for blog post
+                             });
+                         });
+                    -->
+                    <article class="blog-post">
+                        <img src="images/hb1.jpg" alt="Blog Image 1">
+                        <div class="blog-content">
+                            <h3>The Shifting Sands: Modern Conflict Zones</h3>
+                            <p>An in-depth analysis of current geopolitical tensions and their impact on defense strategies...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <img src="images/hb2.jpg" alt="Blog Image 2">
+                        <div class="blog-content">
+                            <h3>Precision Perfected: Our Next-Gen Guidance</h3>
+                            <p>Unveiling the S-9000 guidance system, achieving unprecedented accuracy in diverse terrains...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <img src="images/hb3.jpg" alt="Blog Image 3">
+                        <div class="blog-content">
+                            <h3>The Thunder Roars: Evolution of Artillery</h3>
+                            <p>From ancient catapults to smart munitions, tracing the powerful history of artillery systems...</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 2: Our Mission -->
+            <section id="our-mission" class="content-section animate-on-scroll">
+                <h2>OUR MISSION: SECURING TOMORROW</h2>
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <p>At Sentinel Advanced Artillery, we are dedicated to pioneering the future of defense. Our mission is to provide unparalleled strategic advantage through superior technology, unwavering precision, and the relentless pursuit of innovation.</p>
+                        <p>We empower nations and safeguard lives by developing and deploying the world's most advanced artillery and guidance systems. Our commitment extends beyond hardware; we offer comprehensive training, strategic consultation, and robust support to ensure operational excellence for our partners worldwide.</p>
+                        <p>Integrity, resilience, and a forward-thinking approach are the cornerstones of our operations, as we strive to build a safer, more secure future.</p>
+                        <!-- Firebase Comment: Testimonials or partner logos could be fetched from Firestore here -->
+                    </div>
+                    <div class="mission-image">
+                        <img src="images/ab.jpg" alt="Our Mission - Abstract Tech Image">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="animate-on-scroll">
+        <!-- Firebase Comment: Footer links or dynamic content like "latest news ticker" could be managed here. -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sentinel A.A.</h4>
+                <p>© <span id="current-year"></span> Sentinel Advanced Artillery. All Rights Reserved.</p>
+                <p>Forging the Future of Defense.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <!-- In a real scenario, these would be actual social media links -->
+                <ul class="social-links">
+                    <li><a href="#" aria-label="LinkedIn">L</a></li>
+                    <li><a href="#" aria-label="Twitter">T</a></li>
+                    <li><a href="#" aria-label="Defense Portal">D</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Headquarters</h4>
+                <p>123 Fortress Avenue,<br>Tech City, ST 09870</p>
+                <p>Global Operations Center</p>
+            </div>
+        </div>
+        <!-- Firebase Comment: If newsletter subscription is added, form submission would post email to Firestore or a Firebase Function for mailing list integration. -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>

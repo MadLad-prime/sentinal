@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisitions - Sentinel Advanced Artillery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Optional: Icon library for UI elements -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html#home" class="nav-link nav-logo-placeholder">Home</a>
+            <ul class="nav-middle">
+                <li>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                     <ul class="dropdown">
+                        <li><a href="#">Latest Wars & Conflicts</a></li>
+                        <li><a href="#">Our Guidance Systems</a></li>
+                        <li><a href="#">Artillery Insights</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <ul class="dropdown">
+                        <li><a href="gallery.html#filter-victories">Victories Overseas</a></li>
+                        <li><a href="gallery.html#filter-milestones">Technological Milestones</a></li>
+                        <li><a href="gallery.html#filter-lost-hardware">Lost Hardware (Archive)</a></li>
+                        <li><a href="gallery.html#filter-most-wanted">Most Wanted Threats</a></li>
+                        <li><a href="gallery.html#filter-facilities">Our Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html" class="nav-link active">Store</a> <!-- Add 'active' class -->
+                    <ul class="dropdown">
+                        <li><a href="#category-guidance">Guidance Systems</a></li>
+                        <li><a href="#category-artillery">Heavy Artillery</a></li>
+                        <li><a href="#category-gear">Military Gear</a></li>
+                        <li><a href="#category-merch">Company Merch</a></li>
+                    </ul>
+                </li>
+                <li><a href="forum.html" class="nav-link">Vets Forum</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="bookings.html" class="nav-link nav-button">Bookings</a>
+                <ul class="dropdown booking-dropdown">
+                    <li><a href="#">Bodyguard Services</a></li>
+                    <li><a href="#">Special Drone Operations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="store-page-main">
+        <section class="page-header-minimal store-header">
+            <div class="container">
+                <h1>Procurement Interface</h1>
+                <p>Access Sentinel's advanced arsenal and tactical support equipment.</p>
+            </div>
+             <!-- Animated Background Element (Conceptual) -->
+            <div class="store-header-bg-elements">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <div class="store-layout container animate-on-scroll">
+            <!-- Category Sidebar/Selector -->
+            <aside class="store-categories">
+                <h2 class="category-title">Select Division</h2>
+                 <!-- Firebase Comment: Categories dynamically fetched.
+                      Firebase.firestore().collection('storeCategories').orderBy('order').get().then(...)
+                 -->
+                <button class="category-btn active" data-category="all">
+                    <span class="cat-icon">✶</span> All Systems
+                </button>
+                <button class="category-btn" data-category="guidance">
+                    <span class="cat-icon">🎯</span> Guidance Systems
+                </button>
+                <button class="category-btn" data-category="artillery">
+                    <span class="cat-icon">💣</span> Heavy Artillery
+                </button>
+                <button class="category-btn" data-category="gear">
+                    <span class="cat-icon">🛡️</span> Tactical Gear
+                </button>
+                <button class="category-btn" data-category="merch">
+                    <span class="cat-icon">⭐</span> Company Merch
+                </button>
+            </aside>
+
+            <!-- Product Display Area -->
+            <section class="product-grid-area">
+                 <!-- Firebase Comment: Products fetched based on selected category.
+                      Query will include .where('category', '==', selectedCategory)
+                      and pagination.
+                 -->
+                <div class="product-item" data-category="guidance" data-pid="GS001"
+                    data-name="S-9000 Precision Module"
+                    data-price="CLASSIFIED - Quote Required"
+                    data-specs='["Sub-meter accuracy", "AI-enhanced trajectory", "Multi-spectrum sensors", "EMP hardened"]'
+                    data-description="Flagship guidance system for critical long-range engagements. Ensures target neutralization with minimal collateral risk."
+                    data-image="images/store/s1.jpg">
+                    <div class="product-item-visual">
+                        <img src="images/store/s1.jpg" alt="S-9000 Module">
+                        <div class="product-blueprint-overlay"></div>
+                    </div>
+                    <div class="product-item-info">
+                        <h3>S-9000 Precision Module</h3>
+                        <p class="product-short-desc">Next-gen autonomous targeting.</p>
+                        <span class="product-price">CLASSIFIED</span>
+                        <button class="btn-view-specs">View Specifications</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="artillery" data-pid="HA003"
+                    data-name="Dominator XR Mobile Platform"
+                    data-price="CLASSIFIED - Quote Required"
+                    data-specs='["155mm Extended Range Cannon", "Rapid deployment system", "Autonomous loading", "Networked fire control"]'
+                    data-description="The Dominator XR delivers overwhelming firepower with unmatched mobility and rapid engagement capabilities."
+                    data-image="images/store/s2.jpg">
+                     <div class="product-item-visual">
+                        <img src="images/store/s2.jpg" alt="Dominator XR">
+                        <div class="product-blueprint-overlay"></div>
+                    </div>
+                    <div class="product-item-info">
+                        <h3>Dominator XR Platform</h3>
+                        <p class="product-short-desc">Heavy assault mobile artillery.</p>
+                        <span class="product-price">CLASSIFIED</span>
+                        <button class="btn-view-specs">View Specifications</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="gear" data-pid="TG015"
+                    data-name="Aegis Tactical Vest Mk.IV"
+                    data-price="$2,800.00"
+                    data-specs='["Level IV+ Ballistic Plates", "Integrated comms routing", "Quick-release system", "Modular MOLLE design"]'
+                    data-description="Maximum operator protection without compromising mobility. Features advanced material composition and ergonomic fit."
+                    data-image="images/store/s3.jpg">
+                    <div class="product-item-visual">
+                        <img src="images/store/s3.jpg" alt="Aegis Vest Mk.IV">
+                    </div>
+                    <div class="product-item-info">
+                        <h3>Aegis Tactical Vest Mk.IV</h3>
+                        <p class="product-short-desc">Advanced operator protection.</p>
+                        <span class="product-price">$2,800.00</span>
+                        <button class="btn-view-specs">View Specifications</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="merch" data-pid="MC001"
+                    data-name="Sentinel Tactical Cap"
+                    data-price="$35.00"
+                    data-specs='["High-durability Ripstop", "Embroidered Logo", "Adjustable fit", "Low-profile design"]'
+                    data-description="Official Sentinel Advanced Artillery tactical cap. Built for comfort and field use."
+                    data-image="images/store/s4.jpg">
+                    <div class="product-item-visual">
+                        <img src="images/store/s4.jpg" alt="Sentinel Cap">
+                    </div>
+                    <div class="product-item-info">
+                        <h3>Sentinel Tactical Cap</h3>
+                        <p class="product-short-desc">Official company headwear.</p>
+                        <span class="product-price">$35.00</span>
+                        <button class="btn-view-specs">View Specifications</button>
+                    </div>
+                </div>
+                 <!-- ... more product items ... -->
+
+            </section>
+        </div>
+
+        <!-- Product Detail Modal / Info Panel -->
+        <div id="product-detail-modal" class="product-modal">
+            <div class="product-modal-content">
+                <span class="modal-close-btn">×</span>
+                <div class="modal-main-info">
+                    <img id="modal-product-image" src="https://via.placeholder.com/600x400/555/eee?text=Product+Image" alt="Product Image">
+                    <div class="modal-text-content">
+                        <h2 id="modal-product-name">Product Name</h2>
+                        <p id="modal-product-description">Detailed product description goes here. This panel offers comprehensive insights into the capabilities and strategic advantages of the selected asset.</p>
+                        <h3>Key Specifications:</h3>
+                        <ul id="modal-product-specs" class="spec-list">
+                            <!-- Specs will be populated by JS -->
+                        </ul>
+                        <p class="modal-product-price-tag">Price: <span id="modal-product-price"></span></p>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <!-- Firebase Comment: 'Add to Requisition' would interact with Firestore
+                         - Check user authentication and authorization levels.
+                         - Add item to user's 'requisitionList' (cart equivalent) in Firestore.
+                         - Firebase.firestore().collection('users').doc(userId).collection('requisitionList').add({ productId: PID, quantity: 1 });
+                         - Potentially trigger Firebase Functions for stock checks or approval workflows.
+                    -->
+                    <input type="number" value="1" min="1" max="10" class="quantity-input" aria-label="Quantity">
+                    <button class="btn-add-requisition">Add to Requisition List</button>
+                    <button class="btn-request-quote" style="display:none;">Request Official Quote</button>
+                </div>
+                 <div id="requisition-feedback" class="requisition-feedback-message"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="animate-on-scroll">
+         <!-- ... same footer content as other pages ... -->
+         <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sentinel A.A.</h4>
+                <p>© <span id="current-year"></span> Sentinel Advanced Artillery. All Rights Reserved.</p>
+                <p>Forging the Future of Defense.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="social-links">
+                     <li><a href="#" aria-label="LinkedIn">L</a></li>
+                    <li><a href="#" aria-label="Twitter">T</a></li>
+                    <li><a href="#" aria-label="Defense Portal">D</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Headquarters</h4>
+                <p>123 Fortress Avenue,<br>Tech City, ST 09870</p>
+                <p>Global Operations Center</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

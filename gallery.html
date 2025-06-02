@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sentinel Advanced Artillery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Optional: Icon library like Font Awesome for filter icons if desired -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+
+    <!-- Header (Same as index.html for consistency) -->
+    <header>
+        <nav>
+            <a href="index.html#home" class="nav-link nav-logo-placeholder">Home</a>
+            <ul class="nav-middle">
+                <li>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Latest Wars & Conflicts</a></li>
+                        <li><a href="#">Our Guidance Systems</a></li>
+                        <li><a href="#">Artillery Insights</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-link active">Gallery</a> <!-- Add 'active' class -->
+                    <ul class="dropdown">
+                        <li><a href="#filter-victories">Victories Overseas</a></li>
+                        <li><a href="#filter-milestones">Technological Milestones</a></li>
+                        <li><a href="#filter-lost-hardware">Lost Hardware (Archive)</a></li>
+                        <li><a href="#filter-most-wanted">Most Wanted Threats</a></li>
+                        <li><a href="#filter-facilities">Our Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Guidance Systems</a></li>
+                        <li><a href="#">Heavy Artillery Units</a></li>
+                        <li><a href="#">Tactical Military Gear</a></li>
+                        <li><a href="#">Company Merch</a></li>
+                    </ul>
+                </li>
+                <li><a href="forum.html" class="nav-link">Vets Forum</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="bookings.html" class="nav-link nav-button">Bookings</a>
+                <ul class="dropdown booking-dropdown">
+                    <li><a href="#">Bodyguard Services</a></li>
+                    <li><a href="#">Special Drone Operations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-page-main">
+        <section class="page-header-minimal">
+            <div class="container">
+                <h1>Visual Archives</h1>
+                <p>Explore key moments, technological advancements, and operational highlights of Sentinel A.A.</p>
+            </div>
+        </section>
+
+        <div class="container gallery-container animate-on-scroll">
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Showcases</button>
+                <button class="filter-btn" data-filter="victories">Victories</button>
+                <button class="filter-btn" data-filter="milestones">Milestones</button>
+                <button class="filter-btn" data-filter="lost-hardware">Lost Hardware</button>
+                <button class="filter-btn" data-filter="most-wanted">Threat Intel</button>
+                <button class="filter-btn" data-filter="facilities">Facilities</button>
+                 <!-- Firebase Comment: Categories could be dynamically generated
+                      Firebase.firestore().collection('galleryCategories').get().then(...)
+                 -->
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Firebase Comment: Gallery items fetched from Firestore
+                     Firebase.firestore().collection('galleryItems').orderBy('priority').get().then(snapshot => {
+                         snapshot.forEach(doc => {
+                             const item = doc.data();
+                             // Create HTML for each gallery item, including data-category attribute
+                         });
+                     });
+                -->
+                <div class="gallery-item" data-category="victories">
+                    <img src="images/gallery/g1.jpg" alt="Victory - Operation Alpha" data-title="Operation Alpha Success" data-description="Successful deployment in the Zorvan deserts.">
+                    <div class="gallery-item-overlay">
+                        <h3>Operation Alpha</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="milestones">
+                    <img src="images/gallery/g2.jpg" alt="Guidance System V3" data-title="Guidance System V3 Deployed" data-description="Next-generation precision guidance system completed field tests.">
+                    <div class="gallery-item-overlay">
+                        <h3>Guidance V3 Launch</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="facilities">
+                    <img src="images/gallery/g3.jpg" alt="R&D Center Alpha" data-title="R&D Center Alpha Wing" data-description="Our state-of-the-art research and development facility.">
+                    <div class="gallery-item-overlay">
+                        <h3>R&D Center Alpha</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="lost-hardware">
+                    <img src="images/gallery/g4.jpg" alt="Lost Hardware - Unit 734" data-title="Archived: Unit 734" data-description="Archival image from recovery operation of Unit 734 (decommissioned). Sensitive data redacted.">
+                    <div class="gallery-item-overlay">
+                        <h3>Archive: Unit 734</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item wide" data-category="most-wanted">
+                    <img src="images/gallery/g5.jpg" alt="Most Wanted - XERXES" data-title="Threat Profile: XERXES" data-description="High-priority target: Advanced aerial drone system. Intel classified.">
+                    <div class="gallery-item-overlay">
+                        <h3>Threat: XERXES</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="victories">
+                    <img src="images/gallery/g6.jpg" alt="Victory - Coastal Defense" data-title="Coastal Defense Fortification" data-description="Successful joint coastal defense exercise.">
+                    <div class="gallery-item-overlay">
+                        <h3>Coastal Defense Ex.</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                 <div class="gallery-item" data-category="milestones">
+                    <img src="images/gallery/g7.jpg" alt="Stealth Material" data-title="Stealth Material Breakthrough" data-description="New composite material offering superior radar absorption.">
+                    <div class="gallery-item-overlay">
+                        <h3>Stealth Composite</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="facilities">
+                    <img src="images/gallery/g8.jpg" alt="Proving Grounds" data-title="Sentinel Proving Grounds" data-description="Expansive facility for live-fire testing and system validation.">
+                    <div class="gallery-item-overlay">
+                        <h3>Proving Grounds</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item wide" data-category="milestones">
+                    <img src="images/gallery/g9.jpg" alt="AI Targeting Milestone" data-title="AI Targeting Achieves 99.8% Accuracy" data-description="Neural network targeting system passes critical evaluation phase.">
+                    <div class="gallery-item-overlay">
+                        <h3>AI Targeting Success</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+                 <div class="gallery-item" data-category="most-wanted">
+                    <img src="images/gallery/g10.jpg" alt="Cyber Threat HORUS" data-title="Threat Profile: HORUS Network" data-description="Advanced persistent cyber threat targeting command & control.">
+                    <div class="gallery-item-overlay">
+                        <h3>Cyber Threat: HORUS</h3>
+                        <p>View Details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="gallery-lightbox" class="lightbox-modal">
+            <span class="lightbox-close">×</span>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="#" alt="Lightbox Image">
+                <div id="lightbox-caption" class="lightbox-caption-container">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                </div>
+            </div>
+            <button class="lightbox-prev" aria-label="Previous image"><</button>
+            <button class="lightbox-next" aria-label="Next image">></button>
+        </div>
+
+    </main>
+
+    <!-- Footer (Same as index.html for consistency) -->
+    <footer class="animate-on-scroll">
+         <!-- ... same footer content as other pages ... -->
+         <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sentinel A.A.</h4>
+                <p>© <span id="current-year"></span> Sentinel Advanced Artillery. All Rights Reserved.</p>
+                <p>Forging the Future of Defense.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="social-links">
+                     <li><a href="#" aria-label="LinkedIn">L</a></li>
+                    <li><a href="#" aria-label="Twitter">T</a></li>
+                    <li><a href="#" aria-label="Defense Portal">D</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Headquarters</h4>
+                <p>123 Fortress Avenue,<br>Tech City, ST 09870</p>
+                <p>Global Operations Center</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Will add gallery specific JS here -->
+</body>
+</html>

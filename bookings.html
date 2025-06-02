@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Requisition - Sentinel Advanced Artillery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icon library (e.g., Font Awesome for UI elements) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html#home" class="nav-link nav-logo-placeholder">Home</a>
+            <ul class="nav-middle">
+                <li>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Latest Wars & Conflicts</a></li>
+                        <li><a href="#">Our Guidance Systems</a></li>
+                        <li><a href="#">Artillery Insights</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <ul class="dropdown">
+                        <li><a href="gallery.html#filter-victories">Victories Overseas</a></li>
+                        <li><a href="gallery.html#filter-milestones">Technological Milestones</a></li>
+                        <li><a href="gallery.html#filter-lost-hardware">Lost Hardware (Archive)</a></li>
+                        <li><a href="gallery.html#filter-most-wanted">Most Wanted Threats</a></li>
+                        <li><a href="gallery.html#filter-facilities">Our Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="store.html#category-guidance">Guidance Systems</a></li>
+                        <li><a href="store.html#category-artillery">Heavy Artillery</a></li>
+                        <li><a href="store.html#category-gear">Military Gear</a></li>
+                        <li><a href="store.html#category-merch">Company Merch</a></li>
+                    </ul>
+                </li>
+                <li><a href="forum.html" class="nav-link">Vets Forum</a></li>
+            </ul>
+            <div class="nav-right">
+                <!-- "Bookings" button itself could link here or stay a dropdown trigger -->
+                <a href="bookings.html" class="nav-link nav-button active">Bookings</a> <!-- Active -->
+                 <ul class="dropdown booking-dropdown">
+                    <li><a href="bookings.html#service-bodyguard">Bodyguard Services</a></li>
+                    <li><a href="bookings.html#service-drone">Special Drone Operations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="bookings-page-main">
+        <section class="page-header-minimal booking-header">
+            <div class="container">
+                <i class="fas fa-user-shield header-icon-booking"></i>
+                <h1>Service Requisition Protocol</h1>
+                <p>Formal requests for Sentinel Advanced Support & Operations. Access restricted. All requisitions logged and reviewed.</p>
+            </div>
+        </section>
+
+        <div class="container booking-form-container animate-on-scroll">
+            <div class="booking-instruction-panel">
+                <h3><i class="fas fa-file-signature"></i> Requisition Mandate</h3>
+                <p>This interface is for initiating formal service requests. Provide accurate and complete information. Misrepresentation or unauthorized access will be subject to review under Sentinel Compact Section 7.3.</p>
+                <p>All submitted data is encrypted and transmitted via secure channel. Expect contact from a Sentinel Operations Coordinator within one (1) business day following submission review.</p>
+                <p><strong>Note:</strong> Emergency operational support requires direct contact with Sentinel Command via designated secure lines, not this portal.</p>
+            </div>
+
+            <!-- Firebase Comment:
+                 - Authentication Check: Before displaying form, verify user identity and authorization level.
+                   Firestore might have a 'users' collection with an 'accessLevel' field.
+                 - Form Submission: Data sent to a Firestore 'serviceRequisitions' collection.
+                   Each document would contain all form fields, userId, submissionTimestamp, status ('pending_review').
+                 - Firebase Functions could be triggered on new requisition to:
+                   - Notify operations team.
+                   - Perform initial validation.
+                   - Update user's requisition history.
+            -->
+            <form id="service-requisition-form" class="requisition-form">
+                <div class="form-section">
+                    <h3 class="form-section-title">I. Requester Identification</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="requester-name">Full Name / Designation:</label>
+                            <input type="text" id="requester-name" name="requesterName" required placeholder="e.g., Cmdr. John Doe, Unit 7">
+                        </div>
+                        <div class="form-group">
+                            <label for="requester-org">Organization / Affiliation:</label>
+                            <input type="text" id="requester-org" name="requesterOrg" required placeholder="e.g., Allied Command - Sector Gamma">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-secure">Secure Contact (Encrypted):</label>
+                            <input type="email" id="contact-secure" name="contactSecure" required placeholder="Secure Email or Comms ID">
+                        </div>
+                         <div class="form-group">
+                            <label for="contact-alternate">Alternate Contact (Phone):</label>
+                            <input type="tel" id="contact-alternate" name="contactAlternate" placeholder="+1-XXX-XXX-XXXX (Optional)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="service-selection-section">
+                    <h3 class="form-section-title">II. Service Category Selection</h3>
+                     <div class="service-type-selector">
+                        <div class="service-option" data-service-type="bodyguard_services">
+                            <input type="radio" id="service-bodyguard" name="serviceType" value="bodyguard_services" required>
+                            <label for="service-bodyguard">
+                                <i class="fas fa-users-shield"></i>
+                                <span>Close Protection Detail (Bodyguard Services)</span>
+                                <p>Deployment of elite Sentinel operatives for personal security and asset protection.</p>
+                            </label>
+                        </div>
+                        <div class="service-option" data-service-type="drone_operations">
+                             <input type="radio" id="service-drone" name="serviceType" value="drone_operations" required>
+                            <label for="service-drone">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>Specialized Drone Operations</span>
+                                <p>Advanced UAV/UAS deployment for ISR, tactical support, or bespoke mission parameters.</p>
+                            </label>
+                        </div>
+                         <!-- More services can be added here -->
+                    </div>
+                </div>
+
+                <div class="form-section" id="service-details-bodyguard" style="display:none;">
+                    <h3 class="form-section-title">III. Bodyguard Service Specifications</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="protection-subject">Subject(s) of Protection (Name/Designation):</label>
+                            <textarea id="protection-subject" name="protectionSubject" rows="2" placeholder="List individuals or assets requiring protection. Specify any known threat levels."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="location-ops-bg">Location of Operations:</label>
+                            <input type="text" id="location-ops-bg" name="locationOpsBg" placeholder="City, Region, Country. Specify terrain if relevant.">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration-ops-bg">Estimated Duration (Days):</label>
+                            <input type="number" id="duration-ops-bg" name="durationOpsBg" min="1" placeholder="Minimum 1 day">
+                        </div>
+                         <div class="form-group full-width">
+                            <label for="threat-assessment-bg">Known Threat Assessment / Risk Level:</label>
+                            <select id="threat-assessment-bg" name="threatAssessmentBg">
+                                <option value="">Select Risk Level (if known)</option>
+                                <option value="low">Low / Precautionary</option>
+                                <option value="medium">Medium / Elevated Concern</option>
+                                <option value="high">High / Credible Threat</option>
+                                <option value="critical">Critical / Imminent Danger</option>
+                                <option value="unknown">Unknown / Assessment Required</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="service-details-drone" style="display:none;">
+                    <h3 class="form-section-title">III. Drone Operation Specifications</h3>
+                     <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="mission-objective-drone">Primary Mission Objective(s):</label>
+                            <textarea id="mission-objective-drone" name="missionObjectiveDrone" rows="3" placeholder="e.g., ISR over Sector Delta, perimeter security for Facility X, target designation support."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ao-drone">Area of Operations (Coordinates / Description):</label>
+                            <input type="text" id="ao-drone" name="aoDrone" placeholder="e.g., Grid 34.567, -118.234 or 'Volarian Pass'">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration-drone">Desired Operational Window (Hours/Days):</label>
+                            <input type="text" id="duration-drone" name="durationDrone" placeholder="e.g., 72 hours continuous, 8 hours daily for 5 days">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="payload-requirements-drone">Specific Payload / Sensor Requirements (if any):</label>
+                            <input type="text" id="payload-requirements-drone" name="payloadRequirementsDrone" placeholder="e.g., High-res EO/IR, SIGINT package, LiDAR. Default suite will be assumed if blank.">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-section">
+                    <h3 class="form-section-title">IV. Additional Briefing / Justification</h3>
+                    <div class="form-group">
+                        <label for="additional-info">Provide any supplementary details, urgency, or operational context (Strictly need-to-know):</label>
+                        <textarea id="additional-info" name="additionalInfo" rows="4" placeholder="Limit 1000 characters. Sensitive details to be discussed via secure follow-up."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-submission-area">
+                    <div class="disclaimer-checkbox">
+                        <input type="checkbox" id="acknowledge-terms" name="acknowledgeTerms" required>
+                        <label for="acknowledge-terms">I acknowledge the terms of service requisition and confirm the authenticity of the provided information under penalty of review (Sentinel Compact Sec. 7.3).</label>
+                    </div>
+                    <button type="submit" class="btn-submit-requisition" id="submit-booking-btn">
+                        <i class="fas fa-lock"></i> Transmit Secure Requisition
+                    </button>
+                </div>
+                 <div id="requisition-status-message" class="status-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="animate-on-scroll">
+        <!-- ... same footer content as other pages, perhaps slightly more austere here ... -->
+         <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sentinel A.A. | Operations</h4>
+                <p>© <span id="current-year"></span> Sentinel Advanced Artillery. All Rights Reserved.</p>
+                <p>Secure Service Requisition Portal V2.3</p>
+            </div>
+            <div class="footer-section">
+                <h4>Legal & Compliance</h4>
+                <ul>
+                    <li><a href="#">Sentinel Compact (External)</a></li>
+                    <li><a href="#">Data Security Protocol</a></li>
+                    <li><a href="#">Service Level Agreement Outline</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Emergency Contact</h4>
+                <p>Ops Command: [Secure Line Only]</p>
+                <p>Authentication Required</p>
+            </div>
+             <div class="footer-section">
+                <h4>System Integrity</h4>
+                <p id="connection-status" class="text-success"><i class="fas fa-shield-alt"></i> Secure Channel Active</p>
+                <p>Last System Audit: <span id="last-audit-date">...</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

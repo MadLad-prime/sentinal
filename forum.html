@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vets Comms Hub - Sentinel Advanced Artillery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icon library (e.g., Font Awesome for UI elements) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html#home" class="nav-link nav-logo-placeholder">Home</a>
+            <ul class="nav-middle">
+                <li>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Latest Wars & Conflicts</a></li>
+                        <li><a href="#">Our Guidance Systems</a></li>
+                        <li><a href="#">Artillery Insights</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <ul class="dropdown">
+                        <li><a href="gallery.html#filter-victories">Victories Overseas</a></li>
+                        <li><a href="gallery.html#filter-milestones">Technological Milestones</a></li>
+                        <li><a href="gallery.html#filter-lost-hardware">Lost Hardware (Archive)</a></li>
+                        <li><a href="gallery.html#filter-most-wanted">Most Wanted Threats</a></li>
+                        <li><a href="gallery.html#filter-facilities">Our Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="store.html#category-guidance">Guidance Systems</a></li>
+                        <li><a href="store.html#category-artillery">Heavy Artillery</a></li>
+                        <li><a href="store.html#category-gear">Military Gear</a></li>
+                        <li><a href="store.html#category-merch">Company Merch</a></li>
+                    </ul>
+                </li>
+                <li><a href="forum.html" class="nav-link active">Vets Forum</a></li> <!-- Active -->
+            </ul>
+            <div class="nav-right">
+                <a href="bookings.html" class="nav-link nav-button">Bookings</a>
+                 <ul class="dropdown booking-dropdown">
+                    <li><a href="#">Bodyguard Services</a></li>
+                    <li><a href="#">Special Drone Operations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="forum-page-main">
+        <div class="forum-header-zone">
+            <div class="container">
+                <div class="forum-title-area">
+                    <i class="fas fa-shield-halved forum-header-icon"></i>
+                    <h1>VETERANS COMMS HUB</h1>
+                    <p>Secure Channel for Sentinel Alumni: Share Intel, Experience & Camaraderie</p>
+                </div>
+                <!-- Firebase Comment: User profile widget here
+                     If user is logged in: Display avatar, username, rank/status, link to profile.
+                     If not logged in: Display "Login/Register to Participate"
+                     Firestore could store user profiles with fields like 'username', 'avatarUrl', 'rank', 'joinDate'.
+                -->
+                <div class="forum-user-widget">
+                    <img src="images/up.jpg" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="username">Sgt. "Hex" Corbin</span>
+                        <span class="user-status">Online <i class="fas fa-circle status-online"></i></span>
+                    </div>
+                    <button class="btn-forum-action" id="new-thread-btn"><i class="fas fa-plus-circle"></i> New Transmission</button>
+                </div>
+            </div>
+            <div class="header-animated-grid"></div> <!-- Background grid lines -->
+        </div>
+
+        <div class="forum-layout container">
+            <!-- Main Forum Sections / Categories -->
+            <section class="forum-categories-panel">
+                <!-- Firebase Comment: Categories fetched from Firestore `forumCategories` collection.
+                     Each category document could have 'name', 'description', 'icon', 'lastPostInfo'.
+                -->
+                <div class="forum-category" data-category-id="general-debrief">
+                    <div class="category-icon-area"><i class="fas fa-comments"></i></div>
+                    <div class="category-info">
+                        <h2><a href="#category-general-debrief">General Debriefing</a></h2>
+                        <p>Open discussions, mission after-action reports, and community chat.</p>
+                    </div>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-alt"></i> 1.2k Threads</span>
+                        <span><i class="fas fa-reply-all"></i> 15.7k Posts</span>
+                    </div>
+                    <div class="category-last-post">
+                        <span>Last Post: "Operation Nightfall Recap"</span>
+                        <span class="last-post-author">by <a href="#">Cmdr. Valerius</a> - 2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="forum-category" data-category-id="tech-arsenal">
+                    <div class="category-icon-area"><i class="fas fa-cogs"></i></div>
+                    <div class="category-info">
+                        <h2><a href="#category-tech-arsenal">Tech & Arsenal Insights</a></h2>
+                        <p>Discuss Sentinel hardware, software, guidance systems, and future tech.</p>
+                    </div>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-alt"></i> 875 Threads</span>
+                        <span><i class="fas fa-reply-all"></i> 9.2k Posts</span>
+                    </div>
+                    <div class="category-last-post">
+                        <span>Last Post: "S-9000 Targeting Algorithm Update"</span>
+                        <span class="last-post-author">by <a href="#">TechOp Lena</a> - 45 mins ago</span>
+                    </div>
+                </div>
+
+                <div class="forum-category" data-category-id="tactical-doctrine">
+                    <div class="category-icon-area"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="category-info">
+                        <h2><a href="#category-tactical-doctrine">Tactical Doctrine & Strategy</a></h2>
+                        <p>Share strategies, battlefield experiences, and best practices.</p>
+                    </div>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-alt"></i> 612 Threads</span>
+                        <span><i class="fas fa-reply-all"></i> 7.8k Posts</span>
+                    </div>
+                    <div class="category-last-post">
+                        <span>Last Post: "Countering Swarm Drone Tactics"</span>
+                        <span class="last-post-author">by <a href="#">Pathfinder07</a> - 5 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="forum-category" data-category-id="off-duty-lounge">
+                    <div class="category-icon-area"><i class="fas fa-coffee"></i></div>
+                    <div class="category-info">
+                        <h2><a href="#category-off-duty-lounge">Off-Duty Lounge</a></h2>
+                        <p>Casual conversations, connecting with fellow veterans.</p>
+                    </div>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-alt"></i> 450 Threads</span>
+                        <span><i class="fas fa-reply-all"></i> 6.1k Posts</span>
+                    </div>
+                    <div class="category-last-post">
+                        <span>Last Post: "Favorite MRE (seriously)"</span>
+                        <span class="last-post-author">by <a href="#">GrizzlyActual</a> - Yesterday</span>
+                    </div>
+                </div>
+                 <!-- Firebase Comment: "Archived Missions" or "Classified Debriefs" could be special categories
+                      with restricted access based on user roles/clearance stored in Firestore.
+                 -->
+            </section>
+
+            <!-- Side Panel: Recent Activity / Hot Threads -->
+            <aside class="forum-sidebar">
+                <div class="sidebar-widget" id="recent-activity">
+                    <h3><i class="fas fa-bolt"></i> Hot Transmissions</h3>
+                    <!-- Firebase Comment: Fetched from Firestore `threads` collection,
+                         ordered by 'lastReplyTimestamp' or 'replyCount' desc, limit 5.
+                    -->
+                    <ul>
+                        <li><a href="#">S-9000 Targeting Update <span class="activity-tag tech">Tech</span></a> <span class="activity-replies">23 replies</span></li>
+                        <li><a href="#">Operation Nightfall Recap <span class="activity-tag general">Debrief</span></a> <span class="activity-replies">57 replies</span></li>
+                        <li><a href="#">Effective Urban Artillery Use <span class="activity-tag strategy">Strategy</span></a> <span class="activity-replies">15 replies</span></li>
+                        <li><a href="#">Sentinel Alumni Meetup - NY <span class="activity-tag off-duty">Lounge</span></a> <span class="activity-replies">89 replies</span></li>
+                        <li><a href="#">Need advice: Transitioning to Civilian Life <span class="activity-tag general">Debrief</span></a> <span class="activity-replies">41 replies</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget" id="online-users">
+                    <h3><i class="fas fa-broadcast-tower"></i> Operators Online</h3>
+                     <!-- Firebase Comment: Would use Firebase Realtime Database or Firestore listeners
+                          to show currently active users. A `userPresence` system.
+                     -->
+                    <ul class="online-user-list">
+                        <li><img src="images/up.jpg" alt="Valerius"><a href="#">Cmdr. Valerius</a></li>
+                        <li><img src="images/up.jpg" alt="Lena"><a href="#">TechOp Lena</a></li>
+                        <li><img src="images/up.jpg" alt="Pathfinder"><a href="#">Pathfinder07</a></li>
+                        <li><img src="images/up.jpg" alt="Grizzly"><a href="#">GrizzlyActual</a></li>
+                        <li><img src="images/up.jpg" alt="Hex"><a href="#">Sgt. "Hex" Corbin</a></li>
+                        <li class="more-users">+17 more active</li>
+                    </ul>
+                </div>
+                 <div class="sidebar-widget forum-search-widget">
+                    <h3><i class="fas fa-search"></i> Search Archives</h3>
+                    <input type="text" placeholder="Scan for keywords..." class="forum-search-input">
+                    <button class="btn-forum-search"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modal for New Thread / Post -->
+        <div id="new-transmission-modal" class="forum-modal">
+            <div class="forum-modal-content">
+                <span class="forum-modal-close">×</span>
+                <h2 id="modal-title"><i class="fas fa-edit"></i> Initiate New Transmission</h2>
+                <!-- Firebase Comment: Form submission creates a new document in Firestore `threads` collection.
+                     Or, if replying, adds to a `posts` subcollection of a thread.
+                     Will involve storing 'authorId', 'content', 'timestamp', 'category', 'title'.
+                     Firebase Storage for any attachments.
+                -->
+                <form id="new-transmission-form">
+                    <div class="form-group">
+                        <label for="transmission-title">Subject / Codename:</label>
+                        <input type="text" id="transmission-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transmission-category">Channel / Category:</label>
+                        <select id="transmission-category" name="category" required>
+                            <option value="general-debrief">General Debriefing</option>
+                            <option value="tech-arsenal">Tech & Arsenal Insights</option>
+                            <option value="tactical-doctrine">Tactical Doctrine & Strategy</option>
+                            <option value="off-duty-lounge">Off-Duty Lounge</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transmission-content">Message Body:</label>
+                        <textarea id="transmission-content" name="content" rows="8" required></textarea>
+                    </div>
+                    <div class="form-group form-actions">
+                         <!-- Placeholder for rich text editor controls or attachment button -->
+                        <button type="button" class="btn-attach-file"><i class="fas fa-paperclip"></i> Attach Intel (Max 5MB)</button>
+                        <button type="submit" class="btn-submit-transmission"><i class="fas fa-satellite-dish"></i> Transmit Securely</button>
+                    </div>
+                </form>
+                 <div id="transmission-feedback" class="transmission-feedback-message"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="animate-on-scroll">
+        <!-- ... same footer content as other pages ... -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sentinel A.A.</h4>
+                <p>© <span id="current-year"></span> Sentinel Advanced Artillery. All Rights Reserved.</p>
+                <p>Forging the Future of Defense.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Forum Rules & Etiquette</a></li>
+                    <li><a href="#">Contact Moderators</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="social-links">
+                     <li><a href="#" aria-label="LinkedIn">L</a></li>
+                    <li><a href="#" aria-label="Twitter">T</a></li>
+                    <li><a href="#" aria-label="Defense Portal">D</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>System Status</h4>
+                <p style="color: #2ecc71;"><i class="fas fa-check-circle"></i> All Channels Operational</p>
+                <p>Secure Connection: AES-256</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
